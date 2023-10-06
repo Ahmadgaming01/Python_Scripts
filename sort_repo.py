@@ -11,7 +11,8 @@ for pfadname in os.listdir(datei_pfad):
     
 
     if pfadname.endswith(('.png' , '.jpg','.gif','.jpeg')):
-        os.mkdir('images')
+        if not os.path.exists('Applications'):
+            os.mkdir('images')
         shutil.copy(pfadname , 'images')
         os.remove(pfadname)
         print('Fertig erstellt')
