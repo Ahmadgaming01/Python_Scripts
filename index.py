@@ -10,8 +10,8 @@ logo_with , logo_height = Image.size
 
 
 # create folder
-
-os.mkdir(NEW_FOLDER_NAME )
+if not os.path.exists(NEW_FOLDER_NAME):
+    os.mkdir(NEW_FOLDER_NAME )
 
 run_scr_folder = input('Enter your folder path : ')
 for filename in os.listdir(run_scr_folder):
@@ -25,3 +25,4 @@ for filename in os.listdir(run_scr_folder):
     img.save(os.path.join(NEW_FOLDER_NAME ,filename))
 
 
+print('Add logo was added successfuly !')
